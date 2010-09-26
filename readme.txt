@@ -3,7 +3,7 @@ Contributors: fatihboy
 Tags: IE9, Internet Explorer, Pinned Site, Jump List, Taskbar
 Requires at least: 2.0.2
 Tested up to: 3.0.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Adds support for Internet explorer 9 pinned site features to wordpress blog.
 
@@ -43,3 +43,8 @@ Please visit [http://www.enterprisecoding.com/blog/projects/ie9-pinned-site] for
 
 = 1.0.0 =
 * Initial version
+
+= 1.0.1 =
+* Fix: Administrative jump list entries won't shown.. Now logged in user can see administarative enries instead of page listing
+* Site Mode check added
+* No pinned site javascript output when client is not IE9
