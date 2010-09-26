@@ -58,7 +58,8 @@ function ie9_pinned_site_head() {
 				echo '<meta name="msapplication-task" content="name=' . __( 'Write a post', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'post-new.php;icon-uri=' . plugins_url('media/post.ico', __FILE__) . '" />'."\r\n";
 			}
 			if( current_user_can( 'moderate_comments' ) ) {
-				echo '<meta name="msapplication-task" content="name=' . __( 'Moderate comments', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'edit-comments.php?comment_status=moderated;icon-uri=' . plugins_url('media/comment.ico', __FILE__) . '" />'."\r\n";
+				$unapprovedComments = get_comments('status=hold');
+				echo '<meta name="msapplication-task" content="name=' . __( 'Moderate comments', 'IE9-Pinned-Site' ) . ' (' . count($unapprovedComments) . ');action-uri=' . admin_url() . 'edit-comments.php?comment_status=moderated;icon-uri=' . plugins_url('media/comment.ico', __FILE__) . '" />'."\r\n";
 			}
 			if( current_user_can( 'upload_files' ) ) {
 				echo '<meta name="msapplication-task" content="name=' . __( 'Upload new media', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'media-new.php;icon-uri=' . plugins_url('media/media.ico', __FILE__) . '" />'."\r\n";
