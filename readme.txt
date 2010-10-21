@@ -39,6 +39,14 @@ Please visit [http://www.enterprisecoding.com/blog/projects/ie9-pinned-site] for
 1. Enter the values in the text boxes.
 1. Save your changes
 
+== Screenshots ==
+
+1. IE9 Pinned Site setting page
+2. An example of configured jump list
+3. Add an existing page block
+4. Meta data block
+
+
 == Changelog ==
 
 = 1.0.0 =
@@ -47,3 +55,7 @@ Please visit [http://www.enterprisecoding.com/blog/projects/ie9-pinned-site] for
 = 1.0.1 =
 * Fix: Administrative jump list entries won't shown.. Now logged in user can see administarative enries instead of page listing
 * No pinned site javascript output when client is not IE9
+
+= 1.1.0 =
+* Addin completely rewritten
+* Improved customuzation options and settings page
