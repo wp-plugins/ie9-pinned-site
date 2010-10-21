@@ -46,8 +46,4 @@ Please visit [http://www.enterprisecoding.com/blog/projects/ie9-pinned-site] for
 
 = 1.0.1 =
 * Fix: Administrative jump list entries won't shown.. Now logged in user can see administarative enries instead of page listing
-* Site Mode check added
 * No pinned site javascript output when client is not IE9
-
-= 1.1.0 =
-* Unapproved comments count added to 'Moderate comments' entry
