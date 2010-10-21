@@ -44,7 +44,7 @@ class ie9PinnedSitePage {
 	function render4JumpList(){
 		$pagg = get_page( $this->pageId );
 		
-		echo 'window.external.msSiteModeAddJumpListItem("' . $pagg->post_title . '", "' .  get_page_link( $this->pageId ) . '", "' . plugins_url('media/post.ico', dirname(__FILE__)) . '");'."\r\n";
+		echo 'window.external.msSiteModeAddJumpListItem("' . $pagg->post_title . '", "' .  get_page_link( $this->pageId ) . '", "' . plugins_url('images/post.ico', dirname(__FILE__)) . '");'."\r\n";
 	}
 	
 	function render4AdminPage(){
@@ -56,7 +56,7 @@ class ie9PinnedSitePage {
             <span class="settings">
             	<span class="entry-type">Page</span>
                 <a class="delete" value="<?php echo $this->order ?>" onClick="deleteEntry('<?php echo $this->entryType ?>', <?php echo $this->order ?>)" id="delete<?php echo $this->entryType . $this->order ?>">
-                	<img src="<?php echo plugins_url('media/delete.png',dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
+                	<img src="<?php echo plugins_url('images/delete.png',dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
                 </a>
             </span>
 			<input type="hidden" id="<?php echo $prefix ?>_type" name="<?php echo $prefix ?>_type" value="page">

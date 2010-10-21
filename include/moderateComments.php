@@ -35,7 +35,7 @@ class ie9PinnedSiteModerateComments {
 	
 	function render4Task(){
 		if ( is_user_logged_in() && current_user_can( 'moderate_comments' )) {
-			echo '<meta name="msapplication-task" content="name=' . __( 'Moderate comments', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'edit-comments.php?comment_status=moderated;icon-uri=' . plugins_url('media/comment.ico', __FILE__) . '" />'."\r\n";
+			echo '<meta name="msapplication-task" content="name=' . __( 'Moderate comments', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'edit-comments.php?comment_status=moderated;icon-uri=' . plugins_url('images/comment.ico', __FILE__) . '" />'."\r\n";
 		}
 	}
 	
@@ -47,7 +47,7 @@ class ie9PinnedSiteModerateComments {
             <span class="settings">
             	<span class="entry-type">Custom Task</span>
                 <a value="<?php echo $this->order ?>" onclick="deleteEntry('<?php echo $this->entryType ?>', <?php echo $this->order ?>)" id="delete<?php echo $this->entryType . $this->order ?>">
-                	<img src="<?php echo plugins_url('media/delete.png', dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
+                	<img src="<?php echo plugins_url('images/delete.png', dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
                 </a>
             </span>
   			<input type="hidden" id="<?php echo $prefix ?>_type" name="<?php echo $prefix ?>_type" value="ModerateComments">

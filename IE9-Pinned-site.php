@@ -73,13 +73,13 @@ class ie9PinnedSitePlugin {
 		add_action('wp_head', array(&$this, 'on_head'));
 		add_action('admin_menu', array(&$this, 'on_admin_menu'));
 		
-		wp_register_style('ie9-pinned-site', plugins_url('stylesheet.css', __FILE__), array(), $this->version, 'all');
+		wp_register_style('ie9-pinned-site', plugins_url('ie9-pinned-site.css', __FILE__), array(), $this->version, 'all');
 		wp_register_style('jquery-ui-button', plugins_url('css/jquery-ui-button.css', __FILE__), array(), '1.8.5', 'all');
 		
 		wp_register_script( 'jquery-autocomplete', plugins_url('js/jquery.autocomplete.js', __FILE__));
 		wp_register_script( 'jquery-tmpl', plugins_url('js/jquery.tmpl.js', __FILE__));
 		wp_register_script( 'jquery-ui-effect-transfer', plugins_url('js/jquery-ui-effect-transfer.js', __FILE__));
-		wp_register_script( 'ie9-pinned-site-admin', plugins_url('js/admin.script.js', __FILE__));
+		wp_register_script( 'ie9-pinned-site-admin', plugins_url('js/ie9-pinned-site.js', __FILE__));
 		
 		$this->options = get_option('ie9_pinned_site');
 		
@@ -113,7 +113,7 @@ class ie9PinnedSitePlugin {
 		$homepageTask->type = 'CustomUrl';
 		$homepageTask->url = get_bloginfo( 'url' );
 		$homepageTask->text = 'Home Page';
-		$homepageTask->iconUrl = plugins_url('media/home.ico', __FILE__);
+		$homepageTask->iconUrl = plugins_url('images/home.ico', __FILE__);
 		
 		$publishPostTask =  new stdClass();
 		$publishPostTask->type = "PublishPost";
@@ -160,7 +160,7 @@ class ie9PinnedSitePlugin {
 		
 		if(!$this->options->enabled) { return; }
 		
-		//if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) !== FALSE ) {
+		if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) !== FALSE ) {
 			echo '<meta name="application-name" content="' . $this->options->applicationName . '" />'."\r\n";
 			echo '<meta name="msapplication-tooltip" content="' . $this->options->tooltip . '" />'."\r\n";
 			echo '<meta name="msapplication-starturl" content="' . $this->options->startupUrl . '" />'."\r\n";
@@ -194,7 +194,7 @@ class ie9PinnedSitePlugin {
 				echo '}'."\r\n";
 				echo '</script>'."\r\n";
 			}
-		//}
+		}
 		
 		echo '<!-- /IE9 Pinned Site -->'."\r\n";
 	}
@@ -457,7 +457,7 @@ class ie9PinnedSitePlugin {
             <span class="title">${pageTitle}</span>
             <span class="settings">
             	<span class="entry-type">Page</span>
-                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}" class="delete"><img class="delete" alt="Delete ${entryTypeFriendly} Entry" title="Delete ${entryTypeFriendly} Entry" src="<?php echo plugins_url('media/delete.png', __FILE__)?>"></a> 
+                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}" class="delete"><img class="delete" alt="Delete ${entryTypeFriendly} Entry" title="Delete ${entryTypeFriendly} Entry" src="<?php echo plugins_url('images/delete.png', __FILE__)?>"></a> 
             </span>
 			<input type="hidden" name="${entryType}_${entryId}_type" id="${entryType}_${entryId}_type" value="page">
             <input type="hidden" name="${entryType}_${entryId}_pageId" id="${entryType}_${entryId}_pageId" value="${pageId}">
@@ -476,7 +476,7 @@ class ie9PinnedSitePlugin {
 		foreach($pages as $pagg) {
 			$pageTitle = htmlentities($pagg->post_title, ENT_QUOTES, $this->encoding);
 			
-			echo '<li><span class="title">'. $pageTitle .'</span> <a id="page'. $pagg->ID .'" onclick="appendPageToList(\'page'. $pagg->ID .'\', \'jump_list\', \''. $pageTitle .'\', ' . $pagg->ID . ');"><img alt="Add to Jump List" title="Add to Jump List" src="' . plugins_url('media/plus.png', __FILE__) .'" /></a></li>'."\r\n";
+			echo '<li><span class="title">'. $pageTitle .'</span> <a id="page'. $pagg->ID .'" onclick="appendPageToList(\'page'. $pagg->ID .'\', \'jump_list\', \''. $pageTitle .'\', ' . $pagg->ID . ');"><img alt="Add to Jump List" title="Add to Jump List" src="' . plugins_url('images/plus.png', __FILE__) .'" /></a></li>'."\r\n";
 		}
 		echo '</ul>';
 	}
@@ -489,7 +489,7 @@ class ie9PinnedSitePlugin {
             <span class="title">${categoryName}</span>
             <span class="settings">
             	<span class="entry-type">Category</span>
-                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}" class="delete"><img class="delete" alt="Delete ${entryTypeFriendly} Entry" title="Delete ${entryTypeFriendly} Entry" src="<?php echo plugins_url('media/delete.png', __FILE__)?>"></a> 
+                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}" class="delete"><img class="delete" alt="Delete ${entryTypeFriendly} Entry" title="Delete ${entryTypeFriendly} Entry" src="<?php echo plugins_url('images/delete.png', __FILE__)?>"></a> 
             </span>
 			<input type="hidden" name="${entryType}_${entryId}_type" id="${entryType}_${entryId}_type" value="category">
             <input type="hidden" name="${entryType}_${entryId}_termId" id="${entryType}_${entryId}_termId" value="${termId}">
@@ -508,7 +508,7 @@ class ie9PinnedSitePlugin {
 		foreach($categories as $category) {
 			$categoryName = htmlentities($category->cat_name, ENT_QUOTES, $this->encoding);
 			
-			echo '<li><span class="title">'. $categoryName .'</span> <a id="category'. $category->term_id .'" onclick="appendCategoryToList(\'category'. $category->term_id .'\', \'jump_list\', \''. $categoryName .'\', ' . $category->term_id . ');"><img alt="Add to Jump List" title="Add to Jump List" src="' . plugins_url('media/plus.png', __FILE__) .'" /></a></li>'."\r\n";
+			echo '<li><span class="title">'. $categoryName .'</span> <a id="category'. $category->term_id .'" onclick="appendCategoryToList(\'category'. $category->term_id .'\', \'jump_list\', \''. $categoryName .'\', ' . $category->term_id . ');"><img alt="Add to Jump List" title="Add to Jump List" src="' . plugins_url('images/plus.png', __FILE__) .'" /></a></li>'."\r\n";
 		}
 		echo '</ul>';
 	}
@@ -521,7 +521,7 @@ class ie9PinnedSitePlugin {
             <span class="title">${tagName}</span>
             <span class="settings">
             	<span class="entry-type">Tag</span>
-                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}" class="delete"><img class="delete" alt="Delete ${entryTypeFriendly} Entry" title="Delete ${entryTypeFriendly} Entry" src="<?php echo plugins_url('media/delete.png', __FILE__)?>"></a> 
+                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}" class="delete"><img class="delete" alt="Delete ${entryTypeFriendly} Entry" title="Delete ${entryTypeFriendly} Entry" src="<?php echo plugins_url('images/delete.png', __FILE__)?>"></a> 
             </span>
 			<input type="hidden" name="${entryType}_${entryId}_type" id="${entryType}_${entryId}_type" value="tag">
             <input type="hidden" name="${entryType}_${entryId}_termId" id="${entryType}_${entryId}_termId" value="${termId}">
@@ -540,7 +540,7 @@ class ie9PinnedSitePlugin {
 		foreach($tags as $tag) {
 			$tagName = htmlentities($tag->name, ENT_QUOTES, $this->encoding);
 			
-			echo '<li><span class="title">'. $tagName .'</span> <a id="tag'. $tag->term_id .'" onclick="appendTagToList(\'tag'. $tag->term_id .'\', \'jump_list\', \''. $tagName .'\', ' . $tag->term_id . ');"><img alt="Add to Jump List" title="Add to Jump List" src="' . plugins_url('media/plus.png', __FILE__) .'" /></a></li>'."\r\n";
+			echo '<li><span class="title">'. $tagName .'</span> <a id="tag'. $tag->term_id .'" onclick="appendTagToList(\'tag'. $tag->term_id .'\', \'jump_list\', \''. $tagName .'\', ' . $tag->term_id . ');"><img alt="Add to Jump List" title="Add to Jump List" src="' . plugins_url('images/plus.png', __FILE__) .'" /></a></li>'."\r\n";
 		}
 		echo '</ul>';
 	}
@@ -552,7 +552,7 @@ class ie9PinnedSitePlugin {
             <span class="title">${taskName}</span>
             <span class="settings">
             	<span class="entry-type">Custom Task</span>
-                <a id="deletetask${entryId}" onclick="deleteEntry('task', ${entryId})" value="${entryId}"><img class="delete" alt="Delete Task Entry" title="Delete Task Entry" src="http://www.enterprisecoding.com/blog/wp-content/plugins/ie9-pinned-site/media/delete.png"></a> 
+                <a id="deletetask${entryId}" onclick="deleteEntry('task', ${entryId})" value="${entryId}"><img class="delete" alt="Delete Task Entry" title="Delete Task Entry" src="<?php echo plugins_url('images/delete.png', __FILE__)?>"></a> 
             </span>
 			<input type="hidden" name="task_${entryId}_type" id="task_${entryId}_type" value="${taskType}">
           </li>
@@ -573,7 +573,7 @@ class ie9PinnedSitePlugin {
             <span class="title">${text}</span>
             <span class="settings">
             	<span class="entry-type">url</span>
-                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}"><img class="delete" alt="Delete ${entryType} Entry" title="Delete ${entryType} Entry" src="http://www.enterprisecoding.com/blog/wp-content/plugins/ie9-pinned-site/media/delete.png"></a> 
+                <a id="delete${entryType}${entryId}" onclick="deleteEntry('${entryType}', ${entryId})" value="${entryId}"><img class="delete" alt="Delete ${entryType} Entry" title="Delete ${entryType} Entry" src="<?php echo plugins_url('images/delete.png', __FILE__)?>"></a> 
             </span>
 			<input type="hidden" name="${entryType}_${entryId}_type" id="${entryType}_${entryId}_type" value="customUrl">
             <input type="hidden" name="${entryType}_${entryId}_url" id="${entryType}_${entryId}_url" value="${url}">

@@ -35,7 +35,7 @@ class ie9PinnedSitePublishPost {
 	
 	function render4Task(){
 		if ( is_user_logged_in() && current_user_can( 'publish_posts' )) {
-			echo '<meta name="msapplication-task" content="name=' . __( 'Write a post', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'post-new.php;icon-uri=' . plugins_url('media/post.ico', __FILE__) . '" />'."\r\n";
+			echo '<meta name="msapplication-task" content="name=' . __( 'Write a post', 'IE9-Pinned-Site' ) . ';action-uri=' . admin_url() . 'post-new.php;icon-uri=' . plugins_url('images/post.ico', __FILE__) . '" />'."\r\n";
 		}
 	}
 	
@@ -47,7 +47,7 @@ class ie9PinnedSitePublishPost {
             <span class="settings">
             	<span class="entry-type">Custom Task</span>
                 <a value="<?php echo $this->order ?>" onclick="deleteEntry('<?php echo $this->entryType ?>', <?php echo $this->order ?>)" id="delete<?php echo $this->entryType . $this->order ?>">
-                	<img src="<?php echo plugins_url('media/delete.png', dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
+                	<img src="<?php echo plugins_url('images/delete.png', dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
                 </a>
             </span>
   			<input type="hidden" id="<?php echo $prefix ?>_type" name="<?php echo $prefix ?>_type" value="PublishPost">

@@ -43,7 +43,7 @@ class ie9PinnedSiteCategory {
 	function render4JumpList(){
 		$category = &get_term($this->termId, 'category');
 		
-		echo 'window.external.msSiteModeAddJumpListItem("' . $category->name  . '", "' .  get_category_link( $this->termId ) . '", "' . plugins_url('media/post.ico', dirname(__FILE__)) . '");'."\r\n";
+		echo 'window.external.msSiteModeAddJumpListItem("' . $category->name  . '", "' .  get_category_link( $this->termId ) . '", "' . plugins_url('images/post.ico', dirname(__FILE__)) . '");'."\r\n";
 	}
 	
 	function render4AdminPage(){
@@ -56,7 +56,7 @@ class ie9PinnedSiteCategory {
             <span class="settings">
             	<span class="entry-type">Category</span>
                 <a class="delete" value="<?php echo $this->order ?>" onClick="deleteEntry('<?php echo $this->entryType ?>', <?php echo $this->order ?>)" id="<?php echo $this->entryType . $this->order ?>">
-                	<img src="<?php echo plugins_url('media/delete.png',dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
+                	<img src="<?php echo plugins_url('images/delete.png',dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
                 </a>
             </span>
 			<input type="hidden" id="<?php echo $prefix ?>_type" name="<?php echo $prefix ?>_type" value="Category">

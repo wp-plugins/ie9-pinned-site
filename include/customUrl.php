@@ -54,7 +54,7 @@ class ie9PinnedSiteCustomUrl {
             <span class="settings">
             	<span class="entry-type">url</span>
                 <a value="<?php echo $this->order ?>" onclick="deleteEntry('<?php echo $this->entryType ?>', <?php echo $this->order ?>)" id="delete<?php echo $this->entryType . $this->order ?>">
-                	<img src="<?php echo plugins_url('media/delete.png',dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
+                	<img src="<?php echo plugins_url('images/delete.png',dirname(__FILE__))?>" title="Delete <?php echo $this->entryType ?> Entry" alt="Delete <?php echo $this->entryType ?> Entry" class="delete">
                 </a>
           </span>
           <input type="hidden" id="<?php echo $prefix ?>_type" name="<?php echo $prefix ?>_type" value="CustomUrl">
