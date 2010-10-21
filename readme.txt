@@ -3,7 +3,7 @@ Contributors: fatihboy
 Tags: IE9, Internet Explorer, Pinned Site, Jump List, Taskbar
 Requires at least: 2.0.2
 Tested up to: 3.0.1
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 
 Adds support for Internet explorer 9 pinned site features to wordpress blog.
 
