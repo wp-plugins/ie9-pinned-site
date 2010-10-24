@@ -3,7 +3,7 @@
 Plugin Name: IE9 Pinned Site
 Plugin URI: http://www.enterprisecoding.com/blog/projects/ie9-pinned-site
 Description: Adds support for Internet explorer 9 pinned site features to your wordpress blog
-Version: 1.1.0
+Version: 1.1.1
 Author: Fatih Boy
 Author URI: http://www.enterprisecoding.com/
 License: GPL2
@@ -60,7 +60,7 @@ class ie9PinnedSitePlugin {
 	var $taskOptions;
 	
 	function ie9PinnedSitePlugin() {
-		$this->version = '1.1.0';
+		$this->version = '1.1.1';
 		$this->encoding = get_option('blog_charset');
 		$this->nonceField = 'ie9PinnedSite-updatesettings';
 		
