@@ -58,7 +58,7 @@ Please visit [http://www.enterprisecoding.com/blog/projects/ie9-pinned-site] for
 
 = 1.1.0 =
 * Addin completely rewritten
-* Improved customuzation options and settings page
+* Improved customization options and settings page
 
 = 1.1.1 =
 * Fix: Missing images added
