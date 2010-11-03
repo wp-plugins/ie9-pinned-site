@@ -64,19 +64,6 @@ jQuery(document).ready(function() {
 	
 	doUpdateEntriesOrder('task');
 	doUpdateEntriesOrder('jump_list');
-	
-	jQuery( "#customurl-dialog-form" ).dialog({
-			autoOpen: false,
-			height: 300,
-			width: 350,
-			modal: true,
-			buttons: {
-				Save: function() {},
-				Cancel: function() {
-					jQuery( this ).dialog( "close" );
-				}
-			}
-	});
 });
 
 function doUpdateEntriesOrder(entryType){
