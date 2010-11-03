@@ -60,7 +60,7 @@ class ie9PinnedSitePlugin {
 	var $taskOptions;
 	
 	function ie9PinnedSitePlugin() {
-		$this->version = '1.1.1';
+		$this->version = '1.1.2';
 		$this->encoding = get_option('blog_charset');
 		$this->nonceField = 'ie9PinnedSite-updatesettings';
 		
