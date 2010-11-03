@@ -45,6 +45,10 @@ class ie9PinnedSiteCustomUrl {
 		echo '<meta name="msapplication-task" content="name=' . $this->text . ';action-uri=' . $this->url . ';icon-uri=' . $this->iconUrl . '" />'."\r\n";
 	}
 	
+	function render4JumpList(){
+		echo 'window.external.msSiteModeAddJumpListItem("' . $this->text  . '", "' .  $this->url . '", "' . $this->iconUrl . '");'."\r\n";
+	}
+	
 	function render4AdminPage(){
 		$prefix = $this->entryType . '_' . $this->order;
 	

@@ -8,22 +8,22 @@ div.inside a.rsswidget:hover {
 }
 
 div.inside ul li.bubble {
-	list-style-image: url(media/bubble.png);
+	list-style-image: url(images/bubble.png);
         margin: 0 0 0 25px;
 }
 
 div.inside ul li.rss {
-	list-style-image: url(media/rss.png);
+	list-style-image: url(images/rss.png);
         margin: 0 0 0 25px;
 }
 
 div.inside ul li.email {
-	list-style-image: url(media/email.png);
+	list-style-image: url(images/email.png);
         margin: 0 0 0 25px;
 }
 
 div.inside ul li.twitter {
-	list-style-image: url(media/twitter.png);
+	list-style-image: url(images/twitter.png);
         margin: 0 0 0 25px;
 }
 
@@ -42,7 +42,7 @@ div.inside ul li.twitter {
 }
 
 #categories li .title {
-	background:url("media/arrow.png") no-repeat scroll 4px 13px transparent;
+	background:url("images/arrow.png") no-repeat scroll 4px 13px transparent;
 	padding-left:15px;
 }
 
@@ -64,7 +64,7 @@ div.inside ul li.twitter {
 }
 
 #jump_list_entries li .title {
-	background:url("media/arrow.png") no-repeat scroll 4px 5px transparent;
+	background:url("images/arrow.png") no-repeat scroll 4px 5px transparent;
 	padding-left:15px;
 }
 
@@ -96,7 +96,7 @@ div.inside ul li.twitter {
 }
 
 #task_entries li .title {
-	background:url("media/arrow.png") no-repeat scroll 4px 5px transparent;
+	background:url("images/arrow.png") no-repeat scroll 4px 5px transparent;
 	padding-left:15px;
 }
 
